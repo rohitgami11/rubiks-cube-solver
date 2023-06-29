@@ -272,7 +272,7 @@ public:
         return *this;
     }
 };
-
+// It overloads the function call operator operator() to calculate the hash value for a given RubiksCube3dArray object.
 struct  Hash3d {
     size_t operator()(const RubiksCube3dArray &r1) const {
         string str = "";
