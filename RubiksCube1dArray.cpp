@@ -67,7 +67,7 @@ public:
         return true;
     }
 
-    RubiksCube1dArray &u() override{
+    GenericRubiksCube &u() override{
         this->rotateFace(0);
 
         char temp[3] = {};
@@ -80,7 +80,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &uPrime() override{
+    GenericRubiksCube &uPrime() override{
         //such that three clockwise rotations are equivalent to one anticlockwise rotation
         this->u();
         this->u();
@@ -89,7 +89,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &u2() override{
+    GenericRubiksCube &u2() override{
         //two clockwise rotation
         this->u();
         this->u();
@@ -97,7 +97,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &l() override{
+    GenericRubiksCube &l() override{
         this->rotateFace(1);
 
         char temp[3] = {};
@@ -110,7 +110,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &lPrime() override{
+    GenericRubiksCube &lPrime() override{
         //such that three clockwise rotations are equivalent to one anticlockwise rotation
         this->l();
         this->l();
@@ -119,7 +119,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &l2() override{
+    GenericRubiksCube &l2() override{
         //two clockwise rotation
         this->l();
         this->l();
@@ -127,20 +127,20 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &f() override{
+    GenericRubiksCube &f() override {
         this->rotateFace(2);
 
         char temp[3] = {};
-        for(int i = 0; i < 3; i++) temp[i] = cube[getIndex(5,0,i)];
-        for(int i = 0; i < 3; i++) cube[getIndex(5,0,i)] = cube[getIndex(3,2-i,0)];
-        for(int i = 0; i < 3; i++) cube[getIndex(3,2-i,0)] = cube[getIndex(0,2,2-i)];
-        for(int i = 0; i < 3; i++) cube[getIndex(0,2,2-i)] = cube[getIndex(1,i,2)];
-        for(int i = 0; i < 3; i++) cube[getIndex(1,i,2)] = temp[i];
+        for (int i = 0; i < 3; i++) temp[i] = cube[getIndex(0, 2, i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(0, 2, i)] = cube[getIndex(1, 2 - i, 2)];
+        for (int i = 0; i < 3; i++) cube[getIndex(1, 2 - i, 2)] = cube[getIndex(5, 0, 2 - i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(5, 0, 2 - i)] = cube[getIndex(3, i, 0)];
+        for (int i = 0; i < 3; i++) cube[getIndex(3, i, 0)] = temp[i];
         //*this may be helpful when chaining member function
         return *this;
     }
 
-    RubiksCube1dArray &fPrime() override{
+    GenericRubiksCube &fPrime() override{
         //such that three clockwise rotations are equivalent to one anticlockwise rotation
         this->f();
         this->f();
@@ -149,7 +149,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &f2() override{
+    GenericRubiksCube &f2() override{
         //two clockwise rotation
         this->f();
         this->f();
@@ -157,7 +157,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &r() override{
+    GenericRubiksCube &r() override{
         this->rotateFace(3);
 
         char temp[3] = {};
@@ -165,12 +165,12 @@ public:
         for(int i = 0; i < 3; i++) cube[getIndex(0,2-i,2)] = cube[getIndex(2,2-i,2)];
         for(int i = 0; i < 3; i++) cube[getIndex(2,2-i,2)] = cube[getIndex(5,2-i,2)];
         for(int i = 0; i < 3; i++) cube[getIndex(5,2-i,2)] = cube[getIndex(4,i,0)];
-        for(int i = 0; i < 3; i++) cube[getIndex(4,i,2)] = temp[i];
+        for(int i = 0; i < 3; i++) cube[getIndex(4,i,0)] = temp[i];
         //*this may be helpful when chaining member function
         return *this;
     }
 
-    RubiksCube1dArray &rPrime() override{
+    GenericRubiksCube &rPrime() override{
         //such that three clockwise rotations are equivalent to one anticlockwise rotation
         this->r();
         this->r();
@@ -179,7 +179,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &r2() override{
+    GenericRubiksCube &r2() override{
         //two clockwise rotation
         this->r();
         this->r();
@@ -187,7 +187,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &b() override{
+    GenericRubiksCube &b() override{
         this->rotateFace(4);
 
         char temp[3] = {};
@@ -200,7 +200,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &bPrime() override{
+    GenericRubiksCube &bPrime() override{
         //such that three clockwise rotations are equivalent to one anticlockwise rotation
         this->b();
         this->b();
@@ -209,7 +209,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &b2() override{
+    GenericRubiksCube &b2() override{
         //two clockwise rotation
         this->b();
         this->b();
@@ -217,7 +217,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &d() override{
+    GenericRubiksCube &d() override{
         this->rotateFace(5);
 
         char temp[3] = {};
@@ -230,7 +230,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &dPrime() override{
+    GenericRubiksCube &dPrime() override{
         //such that three clockwise rotations are equivalent to one anticlockwise rotation
         this->d();
         this->d();
@@ -239,7 +239,7 @@ public:
         return *this;
     }
 
-    RubiksCube1dArray &d2() override{
+    GenericRubiksCube &d2() override{
         //two clockwise rotation
         this->d();
         this->d();
