@@ -200,6 +200,17 @@ void GenericRubiksCube::print() const {
     cout << "\n";
 }
 
+vector<GenericRubiksCube::MOVE> GenericRubiksCube::randomShuffleCube(unsigned int times) {
+    vector<MOVE> moves_performed;
+    srand(time(0));
+    for (unsigned int i = 0; i < times; i++) {
+        unsigned int selectMove = (rand() % 18);
+        moves_performed.push_back(static_cast<MOVE>(selectMove));
+        this->move(static_cast<MOVE>(selectMove));
+    }
+    return moves_performed;
+}
+
 //Helper function returns string of colors of corner cubie
 string GenericRubiksCube::getCornerColorString(uint8_t index) const {
     string str = "";

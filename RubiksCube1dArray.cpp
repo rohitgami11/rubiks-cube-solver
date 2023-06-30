@@ -161,11 +161,11 @@ public:
         this->rotateFace(3);
 
         char temp[3] = {};
-        for(int i = 0; i < 3; i++) temp[i] = cube[getIndex(0,i,2)];
-        for(int i = 0; i < 3; i++) cube[getIndex(0,i,2)] = cube[getIndex(2,i,2)];
-        for(int i = 0; i < 3; i++) cube[getIndex(2,i,2)] = cube[getIndex(5,i,2)];
-        for(int i = 0; i < 3; i++) cube[getIndex(5,i,2)] = cube[getIndex(4,2-i,0)];
-        for(int i = 0; i < 3; i++) cube[getIndex(4,2-i,2)] = temp[i];
+        for(int i = 0; i < 3; i++) temp[i] = cube[getIndex(0,2-i,2)];
+        for(int i = 0; i < 3; i++) cube[getIndex(0,2-i,2)] = cube[getIndex(2,2-i,2)];
+        for(int i = 0; i < 3; i++) cube[getIndex(2,2-i,2)] = cube[getIndex(5,2-i,2)];
+        for(int i = 0; i < 3; i++) cube[getIndex(5,2-i,2)] = cube[getIndex(4,i,0)];
+        for(int i = 0; i < 3; i++) cube[getIndex(4,i,2)] = temp[i];
         //*this may be helpful when chaining member function
         return *this;
     }
@@ -191,11 +191,11 @@ public:
         this->rotateFace(4);
 
         char temp[3] = {};
-        for(int i = 0; i < 3; i++) temp[i] = cube[getIndex(2,i,2)];
-        for(int i = 0; i < 3; i++) cube[getIndex(0,0,i)] = cube[getIndex(3,i,2)];
-        for(int i = 0; i < 3; i++) cube[getIndex(3,i,2)] = cube[getIndex(5,2,2-i)];
-        for(int i = 0; i < 3; i++) cube[getIndex(5,2,2-i)] = cube[getIndex(1,2-i,0)];
-        for(int i = 0; i < 3; i++) cube[getIndex(1,2-i,0)] = temp[i];
+        for(int i = 0; i < 3; i++) temp[i] = cube[getIndex(0,0,2-i)];
+        for(int i = 0; i < 3; i++) cube[getIndex(0,0,2-i)] = cube[getIndex(3,2-i,2)];
+        for(int i = 0; i < 3; i++) cube[getIndex(3,2-i,2)] = cube[getIndex(5,2,i)];
+        for(int i = 0; i < 3; i++) cube[getIndex(5,2,i)] = cube[getIndex(1,i,0)];
+        for(int i = 0; i < 3; i++) cube[getIndex(1,i,0)] = temp[i];
         //*this may be helpful when chaining member function
         return *this;
     }

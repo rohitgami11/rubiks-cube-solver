@@ -163,12 +163,12 @@ public:
     GenericRubiksCube &r() override{
         this->rotateFace(3);
 
-        char temp[3] = {};
-        for(int i = 0; i < 3; i++) temp[i] = cube[0][i][2];
-        for(int i = 0; i < 3; i++) cube[0][i][2] = cube[2][i][2];
-        for(int i = 0; i < 3; i++) cube[2][i][2] = cube[5][i][2];
-        for(int i = 0; i < 3; i++) cube[5][i][2] = cube[4][2-i][0];
-        for(int i = 0; i < 3; i++) cube[4][2-i][2] = temp[i];
+        int temp[3]{};
+        for (int i = 0; i < 3; i++) temp[i] = cube[0][2 - i][2];
+        for (int i = 0; i < 3; i++) cube[0][2 - i][2] = cube[2][2 - i][2];
+        for (int i = 0; i < 3; i++) cube[2][2 - i][2] = cube[5][2 - i][2];
+        for (int i = 0; i < 3; i++) cube[5][2 - i][2] = cube[4][i][0];
+        for (int i = 0; i < 3; i++) cube[4][i][0] = temp[i];
         //*this may be helpful when chaining member function
         return *this;
     }
@@ -194,11 +194,11 @@ public:
         this->rotateFace(4);
 
         char temp[3] = {};
-        for(int i = 0; i < 3; i++) temp[i] = cube[0][0][i];
-        for(int i = 0; i < 3; i++) cube[0][0][i] = cube[3][i][2];
-        for(int i = 0; i < 3; i++) cube[3][i][2] = cube[5][2][2-i];
-        for(int i = 0; i < 3; i++) cube[5][2][2-i] = cube[1][2-i][0];
-        for(int i = 0; i < 3; i++) cube[1][2-i][0] = temp[i];
+        for(int i = 0; i < 3; i++) temp[i] = cube[0][0][2-i];
+        for(int i = 0; i < 3; i++) cube[0][0][2-i] = cube[3][2-i][2];
+        for(int i = 0; i < 3; i++) cube[3][2-i][2] = cube[5][2][i];
+        for(int i = 0; i < 3; i++) cube[5][2][i] = cube[1][i][0];
+        for(int i = 0; i < 3; i++) cube[1][i][0] = temp[i];
         //*this may be helpful when chaining member function
         return *this;
     }
