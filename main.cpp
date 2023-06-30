@@ -2,22 +2,28 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#include "RubiksCube1dArray.cpp"
+#include "RubiksCubeBitboard.cpp"
 int main() {
-    RubiksCube1dArray objectCube3d;
+    RubiksCubeBitboard objectCube;
 
-    objectCube3d.u();
-    objectCube3d.print();
-    objectCube3d.d();
-    objectCube3d.print();
-    objectCube3d.r();
-    objectCube3d.print();
-//    objectCube3d.l();
-//    objectCube3d.print();
-    objectCube3d.f();
-    objectCube3d.print();
-    objectCube3d.u();
-    objectCube3d.print();
+    objectCube.u();
+//    objectCube.print();
+    objectCube.d();
+//    objectCube.print();
+    objectCube.r();
+//    objectCube.print();
+    objectCube.l();
+//    objectCube.print();
+//    vector<GenericRubiksCube::MOVE> movesToshuffle = objectCube.randomShuffleCube(6);
+//    for(auto move:movesToshuffle) cout << objectCube.getMove(move) << " ";
+//    cout<<'\n';
+    objectCube.print();
+    objectCube.f();
+    objectCube.print();
+//    objectCube.b();
+//    objectCube.print();
+//    objectCube.u();
+//    objectCube.print();
 
 
 
