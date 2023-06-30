@@ -6,13 +6,13 @@ using namespace std;
 int main() {
     RubiksCubeBitboard objectCube;
 
-    objectCube.u();
+//    objectCube.u();
 //    objectCube.print();
-    objectCube.d();
+//    objectCube.d();
 //    objectCube.print();
-    objectCube.r();
+//    objectCube.r();
 //    objectCube.print();
-    objectCube.l();
+//    objectCube.l();
 //    objectCube.print();
 //    vector<GenericRubiksCube::MOVE> movesToshuffle = objectCube.randomShuffleCube(6);
 //    for(auto move:movesToshuffle) cout << objectCube.getMove(move) << " ";
