@@ -57,20 +57,20 @@ public:
     //return the move in string
     virtual string getMove(MOVE index);
 
-    //print the Rubiks Cube in planer format
+    //print the Rubik's Cube in planer format
     void print() const;
 
     //Randomly shuffle the cube with 'times' moves and returns the moves performed.
     vector<MOVE> randomShuffleCube(unsigned int times);
 
-    // Perform moves on the Rubiks Cube
+    // Perform moves on the Rubik's Cube
     GenericRubiksCube &move(MOVE index);
 
     //Invert a move
     GenericRubiksCube &invert(MOVE index);
 
     /*
-     * Rotational Moves on the Rubiks Cubes
+     * Rotational Moves on the Rubik's Cubes
      * F, F’, F2,
      * U, U’, U2,
      * L, L’, L2,
@@ -115,11 +115,6 @@ public:
 
     virtual GenericRubiksCube &b2() = 0;
 
-    string getCornerColorString(uint8_t index) const;
-
-    uint8_t getCornerIndex(uint8_t index) const;
-
-    uint8_t getCornerOrientation(uint8_t index) const;
 };
 
 
