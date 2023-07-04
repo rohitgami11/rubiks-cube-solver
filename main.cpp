@@ -1,7 +1,6 @@
 //
-// Created by rohit on 16-06-2023.
+// Created by rohit on 22-05-2023.
 //
-
 #include <bits/stdc++.h>
 #include "RubiksCube3dArray.cpp"
 #include "RubiksCube1dArray.cpp"

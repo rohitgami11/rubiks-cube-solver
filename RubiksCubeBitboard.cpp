@@ -1,7 +1,6 @@
 //
-// Created by rohit on 23-06-2023.
+// Created by rohit on 07-06-2023.
 //
-
 #include "GenericRubiksCube.h"
 
 class RubiksCubeBitboard : public GenericRubiksCube {
