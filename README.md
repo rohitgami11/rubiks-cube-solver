@@ -1,79 +1,117 @@
-# Rubiks Cube Solver
+# 🧠 Rubik’s Cube Solver
 
-A C++ application for modeling and solving the Rubik's Cube using multiple algorithmic approaches and cube representations.
+A modular and performant **C++ application** for modeling and solving the Rubik’s Cube using advanced algorithmic approaches and optimized cube representations.
 
-## Features
+---
 
-- **Multiple Cube Representations**: 
-  - 3D Array
-  - 1D Array
-  - Bitboard
+## ✨ Key Features
 
-- **Solving Algorithms**:
-  - **DFS (Depth-First Search) Solver**
-  - **BFS (Breadth-First Search) Solver**
-  - **IDDFS (Iterative Deepening Depth-First Search) Solver**
+🔸 **Multiple Cube Representations**
 
-- **Random Shuffle**: Randomly scrambles the cube for testing solver robustness.
-- **Equality and Assignment**: Compare and assign cube states.
-- **Hashing**: Efficient hashing for cube states, useful for search algorithms.
-- **Move Operations**: Supports all standard Rubik's Cube moves and their inverses.
+* 📦 `3D Array` – Traditional layer-based modeling
+* 📏 `1D Array` – Linear, memory-efficient layout
+* 💡 `Bitboard` – Compact binary encoding for fast bitwise operations
 
-## Getting Started
+🔸 **Solving Algorithms**
 
-### Prerequisites
+* 🔍 `DFS` – Depth-First Search
+* 🔎 `BFS` – Breadth-First Search
+* 🔁 `IDDFS` – Iterative Deepening DFS
 
-- C++14 compatible compiler (e.g., GCC, MinGW, MSVC)
-- CMake 3.25 or higher
-- Ninja (recommended for fast builds)
+🔸 **Core Capabilities**
 
-### Build Instructions
+* 🎲 Random Cube Shuffling
+* 🟰 Cube State Comparison and Assignment
+* 🔐 Hashing Support for Efficient Search
+* 🔁 Full Move Set: Standard and Inverse Moves
 
-1. **Clone the repository:**
-   ```sh
-   git clone <repo-url>
-   cd rubiks-cube-solver-master
-   ```
+---
 
-2. **Configure and build with CMake:**
-   ```sh
-   mkdir build
-   cd build
-   cmake .. -G Ninja
-   ninja
-   ```
+## 🚀 Getting Started
 
-   The executable will be generated as `RubicksCubeSolve.exe` (on Windows) or `RubicksCubeSolve` (on Linux/Mac).
+### ✅ Prerequisites
 
-### Running
+* C++14-compliant compiler (`g++`, `clang++`, or MSVC)
+* [CMake](https://cmake.org/download/) ≥ 3.25
+* [Ninja](https://ninja-build.org/) (recommended for fast builds)
 
-Run the executable from the build directory:
-```sh
-./RubicksCubeSolve
+### 🛠️ Build Instructions
+
+```bash
+# Clone the repo
+git clone <repo-url>
+cd rubiks-cube-solver
+
+# Create and enter build directory
+mkdir build && cd build
+
+# Configure with CMake
+cmake .. -G Ninja
+
+# Build the executable
+ninja
 ```
 
-The main function demonstrates:
-- Creating and printing cubes
-- Shuffling and solving using DFS, BFS, and IDDFS
-- Printing the solution moves
+🔹 On success, the binary will be created as:
 
-## File Structure
+* `RubiksCubeSolve.exe` on **Windows**
+* `RubiksCubeSolve` on **Linux/macOS**
 
-- `main.cpp` - Entry point, demonstrates usage and testing of solvers.
-- `GenericRubiksCube.*` - Abstract base class for cube models.
-- `RubiksCube3dArray.cpp` - 3D array cube implementation.
-- `RubiksCube1dArray.cpp` - 1D array cube implementation.
-- `RubiksCubeBitboard.cpp` - Bitboard cube implementation.
-- `DFSSolver.h`, `BFSSolver.h`, `IDDFSSolver.h` - Solver algorithm headers.
+---
 
-## Contributing
+## ▶️ Running the Solver
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+From the `build/` directory:
 
-## License
+```bash
+./RubiksCubeSolve
+```
 
-[MIT](LICENSE) (Add a LICENSE file if you want to specify the license.)
+🧪 The main demo includes:
 
-## Acknowledgements
+* Cube initialization and printing
+* Random shuffling
+* Solving via DFS, BFS, and IDDFS
+* Displaying solution sequences
 
-- Inspired by classic Rubik's Cube solving algorithms and data structures.
+---
+
+## 📁 Project Structure
+
+```
+rubiks-cube-solver/
+├── main.cpp                      # Application entry point
+├── GenericRubiksCube.*          # Abstract base class
+├── RubiksCube3dArray.cpp        # 3D array cube implementation
+├── RubiksCube1dArray.cpp        # 1D array cube implementation
+├── RubiksCubeBitboard.cpp       # Bitboard cube implementation
+├── DFSSolver.h                  # DFS algorithm
+├── BFSSolver.h                  # BFS algorithm
+└── IDDFSSolver.h                # IDDFS algorithm
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions and ideas from the community!
+Feel free to:
+
+* Fork and submit pull requests
+* Open issues for enhancements or bug reports
+
+> Please open an issue before submitting major changes to coordinate design direction.
+
+---
+
+## 📚 Acknowledgements
+
+Inspired by foundational algorithmic techniques in Rubik’s Cube solving, including state space search, graph traversal, and compact modeling via bitboards.
+
+---
+
+## 📌 License
+
+MIT License — feel free to use, modify, and distribute.
+
+---
